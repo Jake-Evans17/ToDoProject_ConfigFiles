@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: back-deployment
+        labels:
+                app: back-end
+spec:
+        replicas: 1
+        selector:
+                matchLabels:
+                        app: back-end
+        template:
+                metadata:
+                        labels:
+                                app: back-end
+                spec:
+                        containers:
+                        - name: back-end
+                          image: docker.io/jakeevans17/back-img
+                          ports:
+                          - containerPort: 8181
+                          env:
+                                  - name: mysql_ip
+                                    value: 10.11.255.216
