@@ -21,4 +21,4 @@ spec:
                           - containerPort: 8181
                           env:
                                   - name: mysql_ip
-                                    value: 10.11.255.216
+                                    value: mysql
